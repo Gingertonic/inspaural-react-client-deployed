@@ -7,7 +7,9 @@ const loading = () => {
 export const fetchInspauralFromDb = inspId => {
   return dispatch => {
     dispatch(loading());
-    fetch('https://inspaural-api.herokuapp.com/api/v1/inspaurals/' + inspId)
+    fetch('https://inspaural-api.herokuapp.com/api/v1/inspaurals/' + inspId, {
+      mode: "cors"
+    })
       .then(resp => resp.json())
       .then(inspaural => dispatch({type: "FETCH_INSPAURAL", inspaural: inspaural}))
   }
@@ -17,7 +19,8 @@ export const deleteInspauralFromDb = inspId => {
   return dispatch => {
     dispatch(loading());
     fetch('https://inspaural-api.herokuapp.com/api/v1/inspaurals' + inspId, {
-      method: "DELETE"
+      method: "DELETE",
+      mode: "cors"
     }).then(dispatch({type: "DELETE_INSPAURAL", inspId: inspId}))
     .then(dispatch({type: "RESET_CURRENT_INSPAURAL"}))
   }
@@ -66,6 +69,7 @@ export const saveInspauralToDb = data => {
   return dispatch => {
     return fetch('https://inspaural-api.herokuapp.com/api/v1/inspaurals', {
       method: "POST",
+      mode: "cors",
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
