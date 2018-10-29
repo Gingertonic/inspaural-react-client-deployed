@@ -18,7 +18,7 @@ export const fetchInspauralFromDb = inspId => {
 export const deleteInspauralFromDb = inspId => {
   return dispatch => {
     dispatch(loading());
-    fetch('https://inspaural-api.herokuapp.com/api/v1/inspaurals' + inspId, {
+    fetch('https://inspaural-api.herokuapp.com/api/v1/inspaurals/' + inspId, {
       method: "DELETE",
       mode: "cors"
     }).then(dispatch({type: "DELETE_INSPAURAL", inspId: inspId}))
@@ -27,7 +27,6 @@ export const deleteInspauralFromDb = inspId => {
 }
 
 export const updateAmbienceId = (ambienceId, newAmbienceAudioUrl, newAmbienceImageUrl) => {
-  console.log("once in action, ambi id is " + ambienceId)
   return {
     type: "UPDATE_AMBIENCE_ID", ambienceId, newAmbienceAudioUrl, newAmbienceImageUrl
   }
@@ -59,7 +58,6 @@ export const resetQuotes = () => {
 }
 
 export const updateInspauralName = name => {
-  console.log("in actions and handling name change to " + name)
   return {
     type: "UPDATE_INSPAURAL_NAME", name: name
   }
