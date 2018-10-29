@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css?family=Homemade+Apple|Sacramento');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+/* font-family: 'Sacramento', cursive;
+font-family: 'Homemade Apple', cursive; */
+/* font-family: 'Roboto', sans-serif; */
+
+.inspaural {
+  height: 90vh;
+  width: 90vh;
+  border: 2px solid lightblue;
+  shape-outside: content-box;
+  text-align: center;
+}
+
+.inspaural, .outer-display, .inner-display, .quotes-container  {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.outer-display {
+  height: 95%;
+  width: 95%;
+  shape-outside: content-box;
+}
+
+.inner-display {
+  height: 50%;
+  width: 50%;
+  font-family: 'Homemade Apple', cursive;
+  shape-outside: content-box;
+  background-color: lightblue;
+  display: inline;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.welcome {
+  height: 10%;
+  /* font-size: 5vh; */
+  font-size: 4vh;
+  color: white;
+  text-shadow: 2px 2px 4px #FFFFFF;
+}
+
+.instructional-gif {
+  width: 70%;
+}
+
+.nav-bar {
+  height: 5vh;
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 10%;
+}
+
+a {
+  font-size: 2vh;
+  text-decoration: none;
+  color: white;
+  text-shadow: 2px 2px 4px grey;
+}
+
+a:hover {
+  text-shadow: 2px 2px 4px #FFFFFF;
+}
+
+.save-modal {
+  font-family: 'Homemade Apple', cursive;
+}

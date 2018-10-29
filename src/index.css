@@ -1,0 +1,138 @@
+.quotes-container, .ambiences-container, .mixer-container  {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+}
+
+.ambiences-container, .mixer-container, .inspaural-index-container, .save-dialog, .welcome-dialog {
+  justify-content: space-around;
+  height: 25vh;
+}
+
+.inspaural-index-container, .save-dialog {
+  padding-top: 4vh;
+  padding-bottom: 4vh;
+}
+
+.inspaural-index-container {
+  overflow: scroll;
+}
+
+.ambiences-container {
+  padding-top: 5vh;
+  padding-bottom: 3vh;
+}
+
+.mixer-container {
+  padding-top: 2vh;
+  padding-bottom: 6vh;
+}
+
+.welcome-dialog {
+  padding-top: 3.5vh;
+  padding-bottom: 4.5vh;
+}
+
+
+.selected-quote, .unselected-quote, .reset-quotes {
+  /* height: 18vh;
+  width: 18vh; */
+  height: 25%;
+  width: 25%;
+}
+
+.selected-quote, .unselected-quote, .selected-ambience, .unselected-ambience, .reset-quotes {
+  filter: grayscale(0.8) opacity(0.5);
+  object-fit: cover;
+}
+
+.selected-quote {
+  border: 1vh solid lightblue;
+  height: 22.5%;
+  width: 22.5%;
+}
+
+.selected-ambience {
+  border: 1px solid lightblue;
+}
+
+.selected-quote, .selected-ambience, .unselected-quote:hover, .unselected-ambience:hover, .reset-quotes:hover {
+  filter: opacity(0.9);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.selected-ambience, .unselected-ambience {
+  width: 35%;
+  height: 45%;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+img[id^="blank"]{
+  border: none;
+}
+
+.mixer-track-thumb {
+  height: 5vh;
+  width: 6vh;
+  border-radius: 50%;
+  object-fit: cover;
+  filter: grayscale(0.5);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.mixer-slider {
+  width: 20%;
+  height: 80%
+}
+
+.inspaural-li, ul {
+  font-family: monospace;
+  list-style: none;
+  text-align: center;
+}
+
+.inspaural-li:hover {
+  color: white;
+}
+
+.delete-button {
+  float: right;
+  margin-right: 5vh;
+  color: lightblue;
+}
+
+.delete-button:hover {
+  color: red;
+}
+
+input[type=submit] {
+  background-color: lightblue;
+  font-family: monospace;
+  color: darkred;
+  border: 1px dashed white;
+}
+
+input[type="text"] {
+  width: 50%;
+  margin: 5vh;
+  padding: 1vh;
+  border-radius: 2px;
+  text-align: center;
+  color: lightblue;
+  border: lightblue;
+  font-family: monospace;
+}
+
+.error-alert {
+  padding: 5vh;
+  margin: 3vh;
+  border: 2px solid lightblue;
+  font-family: monospace;
+  text-align: center;
+  width: 40vh;
+  color: grey;
+}
