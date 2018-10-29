@@ -10,7 +10,7 @@ export const fetchQuotes = () => {
   return dispatch => {
     console.log("about to dispatch loadingQuotes from fetchQuotes in actions")
     dispatch(loading());
-    return fetch('/quotes')
+    return fetch('https://inspaural-api.herokuapp.com/api/v1/quotes')
       .then(resp => resp.json())
       .then(quotes => dispatch({type: "FETCH_QUOTES", quotes}))
   }
@@ -21,7 +21,7 @@ export const fetchAmbiences = () => {
   return dispatch => {
     console.log("about to dispatch loading from fetchAmbiences in actions")
     dispatch(loading());
-    return fetch('/ambiences')
+    return fetch('https://inspaural-api.herokuapp.com/api/v1/ambiences')
       .then(resp => resp.json())
       .then(ambiences => dispatch({type: "FETCH_AMBIENCES", ambiences}))
   }

@@ -7,7 +7,7 @@ const loading = () => {
 export const fetchInspauralFromDb = inspId => {
   return dispatch => {
     dispatch(loading());
-    fetch('/inspaurals/' + inspId)
+    fetch('https://inspaural-api.herokuapp.com/api/v1/inspaurals/' + inspId)
       .then(resp => resp.json())
       .then(inspaural => dispatch({type: "FETCH_INSPAURAL", inspaural: inspaural}))
   }
@@ -16,7 +16,7 @@ export const fetchInspauralFromDb = inspId => {
 export const deleteInspauralFromDb = inspId => {
   return dispatch => {
     dispatch(loading());
-    fetch('inspaurals/' + inspId, {
+    fetch('https://inspaural-api.herokuapp.com/api/v1/inspaurals' + inspId, {
       method: "DELETE"
     }).then(dispatch({type: "DELETE_INSPAURAL", inspId: inspId}))
     .then(dispatch({type: "RESET_CURRENT_INSPAURAL"}))
@@ -64,7 +64,7 @@ export const updateInspauralName = name => {
 
 export const saveInspauralToDb = data => {
   return dispatch => {
-    return fetch('/inspaurals', {
+    return fetch('https://inspaural-api.herokuapp.com/api/v1/inspaurals', {
       method: "POST",
       headers: {
         'Accept': 'application/json',
