@@ -49,11 +49,25 @@ export default function inspauralReducer(state = initState, action){
       }
 
     case "RESET_CURRENT_INSPAURAL":
-      return initState
+    return {
+      id: 0,
+      name: "New Inspaural",
+      selectedQuoteIds: [6, 7, 10, 11],
+      quote1: {quoteNum: 1, id: 6, volume: 40, audioUrl: "", imageUrl: loadingImage},
+      quote2: {quoteNum: 2, id: 7, volume: 40, audioUrl: "", imageUrl: loadingImage},
+      quote3: {quoteNum: 3, id: 10, volume: 40, audioUrl: "", imageUrl: loadingImage},
+      quote4: {quoteNum: 4, id: 11, volume: 40, audioUrl: "", imageUrl: loadingImage},
+      selectedAmbience: {id: 0, volume: 40, audioUrl: "", imageUrl: loadingImage},
+      loading: false
+    }
 
     case "UPDATE_AMBIENCE_ID":
       console.log("once in reducer, ambi id is " + action.ambienceId)
-      return {...state, selectedAmbience: {...state.selectedAmbience, id: action.ambienceId, audioUrl: action.newAmbienceAudioUrl, imageUrl: action.newAmbienceImageUrl}, loading: false}
+      if (action.ambienceId === 0){
+        return {...state, selectedAmbience: {id: 0, volume: 40, audioUrl: "", imageUrl: loadingImage}, loading: false}
+      } else {
+        return {...state, selectedAmbience: {...state.selectedAmbience, id: action.ambienceId, audioUrl: action.newAmbienceAudioUrl, imageUrl: action.newAmbienceImageUrl}, loading: false}
+      }
 
     case "UPDATE_AMBIENCE_VOLUME":
       return {...state, selectedAmbience: {...state.selectedAmbience, volume: action.newAmbienceVolume}, loading: false}
