@@ -16,7 +16,14 @@ export default function sessionReducer(state = initState, action){
       return { ...state, inspaurals: state.inspaurals.filter(insp => insp.id !== action.inspId)}
 
     case "ADD_INSPAURAL":
-      return { ...state, inspaurals: state.inspaurals.concat(action.newInspaural)}
+      if (state.inspaurals.find(i => i.id === action.newInspaural.id)){
+        console.log("already here mate")
+        return state
+      }
+      else {
+        console.log("adding!")
+        return { ...state, inspaurals: state.inspaurals.concat(action.newInspaural)}
+      }
 
     default:
       return state
